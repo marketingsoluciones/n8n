@@ -5,7 +5,7 @@ export function useTitleChange() {
 	const prependBeta = (title: string) => {
 		const settingsStore = useSettingsStore();
 		const { releaseChannel } = settingsStore.settings;
-		return releaseChannel === 'stable' ? title : `[${releaseChannel.toUpperCase()}] ${title}`;
+		return releaseChannel === 'stable' ? title : `${title}`;
 	};
 
 	const titleSet = (workflow: string, status: WorkflowTitleStatus) => {
@@ -16,11 +16,11 @@ export function useTitleChange() {
 			icon = '▶️';
 		}
 
-		window.document.title = prependBeta(`n8n - ${icon} ${workflow}`);
+		window.document.title = prependBeta('workflow');
 	};
 
 	const titleReset = () => {
-		window.document.title = prependBeta('n8n - Workflow Automation');
+		window.document.title = prependBeta('Workflow');
 	};
 
 	return {

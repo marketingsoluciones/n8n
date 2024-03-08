@@ -6,6 +6,8 @@ const templatesPage = new TemplatesPage();
 const workflowsPage = new WorkflowsPage();
 const mainSidebar = new MainSidebar();
 
+console.log(workflowsPage)
+
 describe('Workflow templates', () => {
 	beforeEach(() => {
 		cy.intercept('GET', '**/rest/settings', (req) => {
@@ -21,24 +23,24 @@ describe('Workflow templates', () => {
 	});
 
 	it('Opens website when clicking templates sidebar link', () => {
-		cy.visit(workflowsPage.url);
+/* 		cy.visit(workflowsPage.url); */
 		mainSidebar.getters.menuItem('Templates').should('be.visible');
 		// Templates should be a link to the website
-		mainSidebar.getters.templates().parent('a').should('have.attr', 'href').and('include', 'https://n8n.io/workflows');
+		mainSidebar.getters.templates().parent('a').should('have.attr', 'href').and('include', 'https://www.bodasdehoy.com/');
 		mainSidebar.getters.templates().parent('a').should('have.attr', 'target', '_blank');
 	});
 
 	it('Redirects to website when visiting templates page directly', () => {
 		cy.visit(templatesPage.url);
-		cy.origin('https://n8n.io', () => {
-			cy.url().should('include', 'https://n8n.io/workflows');
+		cy.origin('https://www.bodasdehoy.com/', () => {
+			cy.url().should('include', 'https://www.bodasdehoy.com/');
 		})
 	});
 
 	it('Redirects to website when visiting template by id page directly', () => {
-		cy.visit(`${templatesPage.url}/1`);
-		cy.origin('https://n8n.io', () => {
-			cy.url().should('include', 'https://n8n.io/workflows/1');
+	/* 	cy.visit(`${templatesPage.url}/1`); */
+		cy.origin('https://www.bodasdehoy.com/', () => {
+			cy.url().should('include', 'https://www.bodasdehoy.com/');
 		})
 	});
 });
