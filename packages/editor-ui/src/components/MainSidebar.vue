@@ -17,9 +17,12 @@
 		</div>
 		<n8n-menu :items="mainMenuItems" :collapsed="isCollapsed" @select="handleSelect">
 			<template #header>
-				<div :class="$style.logo">
-					<img :src="logoPath" data-test-id="n8n-logo" :class="$style.icon" alt="n8n" />
-				</div>
+				<a href="https://cms.bodasdehoy.com/">
+					<div :class="$style.logo">
+						<img :src="logoOutPath" data-test-id="n8n-logo" :class="$style.icon" alt="n8n" />
+						<img :src="logoPath" data-test-id="n8n-logo" :class="$style.icon" alt="n8n" />
+					</div>
+				</a>
 			</template>
 
 			<template #beforeLowerMenu>
@@ -167,6 +170,11 @@ export default defineComponent({
 		),
 		logoPath(): string {
 			return this.basePath + (this.isCollapsed ? 'static/logo/collapsed.svg' : this.uiStore.logo);
+		},
+		logoOutPath(): string {
+			return (
+				this.basePath + (this.isCollapsed ? 'static/logo/log-out1.svg' : 'static/logo/log-out1.svg')
+			);
 		},
 		hasVersionUpdates(): boolean {
 			return (
@@ -509,6 +517,7 @@ export default defineComponent({
 
 		.logo img {
 			left: 0;
+			padding-right: 3px !important;
 		}
 	}
 }
