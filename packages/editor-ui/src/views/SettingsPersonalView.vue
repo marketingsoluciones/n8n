@@ -15,7 +15,7 @@
 				/>
 			</div>
 		</div>
-		<div>
+		<!-- <div>
 			<div class="mb-s">
 				<n8n-heading size="large">{{
 					i18n.baseText('settings.personal.basicInformation')
@@ -31,8 +31,8 @@
 					@submit="onSubmit"
 				/>
 			</div>
-		</div>
-		<div v-if="!signInWithLdap && !signInWithSaml">
+		</div> -->
+		<!-- <div v-if="!signInWithLdap && !signInWithSaml">
 			<div class="mb-s">
 				<n8n-heading size="large">{{ i18n.baseText('settings.personal.security') }}</n8n-heading>
 			</div>
@@ -74,7 +74,7 @@
 					@click="onMfaDisableClick"
 				/>
 			</div>
-		</div>
+		</div> -->
 		<div>
 			<div class="mb-s">
 				<n8n-heading size="large">{{
