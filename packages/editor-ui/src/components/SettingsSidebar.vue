@@ -43,14 +43,14 @@ export default defineComponent({
 		},
 		sidebarMenuItems(): IMenuItem[] {
 			const menuItems: IMenuItem[] = [
-				{
-					id: 'settings-usage-and-plan',
-					icon: 'chart-bar',
-					label: this.$locale.baseText('settings.usageAndPlan.title'),
-					position: 'top',
-					available: this.canAccessUsageAndPlan(),
-					route: { to: { name: VIEWS.USAGE } },
-				},
+				// {
+				// 	id: 'settings-usage-and-plan',
+				// 	icon: 'chart-bar',
+				// 	label: this.$locale.baseText('settings.usageAndPlan.title'),
+				// 	position: 'top',
+				// 	available: this.canAccessUsageAndPlan(),
+				// 	route: { to: { name: VIEWS.USAGE } },
+				// },
 				{
 					id: 'settings-personal',
 					icon: 'user-circle',
@@ -67,14 +67,14 @@ export default defineComponent({
 					available: this.canAccessUsersSettings(),
 					route: { to: { name: VIEWS.USERS_SETTINGS } },
 				},
-				{
-					id: 'settings-api',
-					icon: 'plug',
-					label: this.$locale.baseText('settings.n8napi'),
-					position: 'top',
-					available: this.canAccessApiSettings(),
-					route: { to: { name: VIEWS.API_SETTINGS } },
-				},
+				// {
+				// 	id: 'settings-api',
+				// 	icon: 'plug',
+				// 	label: this.$locale.baseText('settings.n8napi'),
+				// 	position: 'top',
+				// 	available: this.canAccessApiSettings(),
+				// 	route: { to: { name: VIEWS.API_SETTINGS } },
+				// },
 				{
 					id: 'settings-external-secrets',
 					icon: 'vault',

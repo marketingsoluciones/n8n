@@ -73,9 +73,9 @@
 									<el-dropdown-item command="settings">
 										{{ $locale.baseText('settings') }}
 									</el-dropdown-item>
-									<el-dropdown-item command="logout">
+									<!-- <el-dropdown-item command="logout">
 										{{ $locale.baseText('auth.signout') }}
-									</el-dropdown-item>
+									</el-dropdown-item> -->
 								</el-dropdown-menu>
 							</template>
 						</el-dropdown>
@@ -196,10 +196,10 @@ export default defineComponent({
 					id: 'settings',
 					label: this.$locale.baseText('settings'),
 				},
-				{
-					id: 'logout',
-					label: this.$locale.baseText('auth.signout'),
-				},
+				// {
+				// 	id: 'logout',
+				// 	label: this.$locale.baseText('auth.signout'),
+				// },
 			];
 		},
 		mainMenuItems(): IMenuItem[] {
@@ -353,7 +353,6 @@ export default defineComponent({
 		},
 	},
 	async mounted() {
-		this.basePath = this.rootStore.baseUrl;
 		if (this.$refs.user) {
 			void this.externalHooks.run('mainSidebar.mounted', {
 				userRef: this.$refs.user as Element,
