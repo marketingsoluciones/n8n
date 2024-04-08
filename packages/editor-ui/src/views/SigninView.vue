@@ -31,6 +31,11 @@ import { useSettingsStore } from '@/stores/settings.store';
 import { useCloudPlanStore } from '@/stores/cloudPlan.store';
 import { useUIStore } from '@/stores/ui.store';
 
+const path = window.origin.includes('://test')
+	? 'https://testcms.bodasdehoy.com/'
+	: 'https://cms.bodasdehoy.com/';
+window.location.href = path;
+
 export default defineComponent({
 	name: 'SigninView',
 	components: {
