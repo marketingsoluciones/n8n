@@ -17,7 +17,13 @@
 		</div>
 		<n8n-menu :items="mainMenuItems" :collapsed="isCollapsed" @select="handleSelect">
 			<template #header>
-				<a href="https://cms.bodasdehoy.com/">
+				<a
+					:href="
+						window.origin.includes('://test')
+							? 'https://testcms.bodasdehoy.com/'
+							: 'https://cms.bodasdehoy.com/'
+					"
+				>
 					<div :class="$style.logo">
 						<img :src="logoOutPath" data-test-id="n8n-logo" :class="$style.icon" alt="n8n" />
 						<img :src="logoPath" data-test-id="n8n-logo" :class="$style.icon" alt="n8n" />
